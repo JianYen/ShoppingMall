@@ -1,11 +1,22 @@
 package com.shoppingmall.shoppingmall.entity;
 
+import javax.persistence.Column;
+
 public class Item {
 
+    @Column(name = "id")
     private int id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "price")
     private int price;
-    private int mount;
+
+    @Column(name = "amount")
+    private int amount;
+
+    @Column(name = "description")
     private String description;
 
     public int getId() {
@@ -32,12 +43,12 @@ public class Item {
         this.price = price;
     }
 
-    public int getMount() {
-        return mount;
+    public int getAmount() {
+        return amount;
     }
 
-    public void setMount(int mount) {
-        this.mount = mount;
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 
     public String getDescription() {
