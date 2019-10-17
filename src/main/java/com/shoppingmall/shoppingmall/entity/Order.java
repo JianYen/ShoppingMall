@@ -1,0 +1,21 @@
+package com.shoppingmall.shoppingmall.entity;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "order")
+public class Order {
+
+    @Column(name = "id")
+    private int id;
+
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private User user;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "item_id", referencedColumnName = "id")
+    private Item item;
+
+}
